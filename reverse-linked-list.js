@@ -1,20 +1,20 @@
 /**
- * result
- * 初始值：
- * head->Beijing->Shanghai->Guangzhou->null
- * 处理后：
- * Guangzhou->Shanghai->Beijing->head->null
+ * result:
+ *   初始链表：
+ *   Shenzhen->Beijing->Shanghai->Guangzhou->null
+ *   结果链表：
+ *   Guangzhou->Shanghai->Beijing->Shenzhen->null
  */
 var linkedList = require('./src/linked-list')
 var utils = require('./src/utils')
 var displayLinkedList = utils.displayLinkedList
 
-var cities = new linkedList()
-cities.insert('Beijing', 'head')
+var cities = new linkedList('Shenzhen')
+cities.insert('Beijing', 'Shenzhen')
 cities.insert('Shanghai', 'Beijing')
 cities.insert('Guangzhou', 'Shanghai')
 console.log('初始链表：')
-displayLinkedList(cities.find('head'))
+displayLinkedList(cities.head)
 
 var newCitiesHead = reverseList(cities.head)
 

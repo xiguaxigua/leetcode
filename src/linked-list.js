@@ -3,8 +3,8 @@ function Node (element) {
   this.next = null
 }
 
-function LinkedList () {
-  this.head = new Node('head')
+function LinkedList (headElement) {
+  this.head = new Node(headElement)
   this.find = find
   this.insert = insert
   this.display = display
