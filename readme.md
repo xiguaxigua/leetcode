@@ -13,3 +13,11 @@
 - **160** Intersection of Two Linket List (两链表求交点)
 [question](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
 [answer](./intersection-of-two-linked-list.js)
+
+- **141** Linked List Cycle (链表是否有环)
+[question](https://leetcode.com/problems/linked-list-cycle/description/)
+[answer](./linked-list-cycle.js)
+
+- **142** Linked List Cycle II (求链表环的起始节点)
+[question](https://leetcode.com/problems/linked-list-cycle-ii/description/)
+[answer](./linked-list-cycle2.js)
