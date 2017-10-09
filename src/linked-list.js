@@ -1,5 +1,5 @@
 function Node (element) {
-  this.element = element
+  this.val = val
   this.next = null
 }
 
