@@ -21,3 +21,7 @@
 - **142** Linked List Cycle II (求链表环的起始节点)
 [question](https://leetcode.com/problems/linked-list-cycle-ii/description/)
 [answer](./linked-list-cycle2.js)
+
+- **86** Partition List (链表划分)
+[question](https://leetcode.com/problems/partition-list/description/)
+[answer](./partition-list.js)
