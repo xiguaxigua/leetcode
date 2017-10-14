@@ -25,3 +25,7 @@
 - **86** Partition List (链表划分)
 [question](https://leetcode.com/problems/partition-list/description/)
 [answer](./partition-list.js)
+
+- **138** Copy List with Random Pointer (复杂链表的深拷贝)
+[question](https://leetcode.com/problems/copy-list-with-random-pointer/description/)
+[answer](./copy-width-random-pointer.js)
