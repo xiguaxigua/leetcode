@@ -38,3 +38,7 @@
 - **23** Merge k Sorted Lists (合并链表2)
 [question](https://leetcode.com/problems/merge-k-sorted-lists/description/)
 [answer](./merge-two-sorted-list2.js)
+
+- **2** Add Two Numbers (链表相加)
+[question](https://leetcode.com/problems/add-two-numbers/description/)
+[answer](./add-two-numbers.js)
