@@ -2,6 +2,7 @@
 
 ### 链表
 ------
+
 - **206** Reverse Linked List (链表逆序1)
 [question](https://leetcode.com/problems/reverse-linked-list/description/)
 [answer](./reverse-linked-list.js)
@@ -29,3 +30,7 @@
 - **138** Copy List with Random Pointer (复杂链表的深拷贝)
 [question](https://leetcode.com/problems/copy-list-with-random-pointer/description/)
 [answer](./copy-width-random-pointer.js)
+
+- **21** Merge Two Sorted Lists (合并链表1)
+[question](https://leetcode.com/problems/merge-two-sorted-lists/description/)
+[answer](./merge-two-sorted-list1.js)
