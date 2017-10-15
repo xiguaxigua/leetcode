@@ -34,3 +34,7 @@
 - **21** Merge Two Sorted Lists (合并链表1)
 [question](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 [answer](./merge-two-sorted-list1.js)
+
+- **23** Merge k Sorted Lists (合并链表2)
+[question](https://leetcode.com/problems/merge-k-sorted-lists/description/)
+[answer](./merge-two-sorted-list2.js)
