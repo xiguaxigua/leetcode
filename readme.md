@@ -42,3 +42,7 @@
 - **2** Add Two Numbers (链表相加)
 [question](https://leetcode.com/problems/add-two-numbers/description/)
 [answer](./add-two-numbers.js)
+
+- **225** Implement Stack using Queues (使用队列实现堆栈)
+[question](https://leetcode.com/problems/implement-stack-using-queues/description/)
+[answer](implement-stack-using-queues.js)
