@@ -43,6 +43,9 @@
 [question](https://leetcode.com/problems/add-two-numbers/description/)
 [answer](./add-two-numbers.js)
 
+### 堆，栈，队列
+------
+
 - **225** Implement Stack using Queues (使用队列实现栈)
 [question](https://leetcode.com/problems/implement-stack-using-queues/description/)
 [answer](implement-stack-using-queues.js)
@@ -50,4 +53,8 @@
 - **232** Implement Queue using Stacks (使用栈实现队列)
 [question](https://leetcode.com/problems/implement-queue-using-stacks/description/)
 [answer](implement-queues-using-stack.js)
+
+- **155** Min Stack (包含min函数的栈)
+[question](https://leetcode.com/problems/min-stack/description/)
+[answer](min-stack.js)
 
