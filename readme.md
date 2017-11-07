@@ -79,3 +79,6 @@ var reverseList = function (head) {
 [question](https://leetcode.com/problems/min-stack/description/)
 [answer](min-stack.js)
 
+**224** Basic Calculator (简单计算器)
+[question](https://leetcode.com/problems/basic-calculator/description/)
+[answer](basic-calculator.js)
