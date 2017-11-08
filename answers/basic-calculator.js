@@ -1,16 +1,12 @@
 /**
- * #question
- *  [224](https://leetcode.com/problems/basic-calculator/description/)
- * #/question
- *
  * #describe
  * Implement a basic calculator to evaluate a simple expression string.
  * The expression string may contain open ( and closing parentheses ), the plus + or minus sign -, non-negative integers and empty spaces .
  * You may assume that the given expression is always valid.
- * #/describe
+ * #describe
  */
 
-/* answer-start */
+/* answer */
 var Stack = function () {
   this.data = [];
 }
@@ -108,9 +104,9 @@ var calculate = function (str) {
 
   return numberStack.top()
 }
-/* answer-end */
+/* answer */
 
-/* test-start */
+/* test */
 var assert = require('colorful-assert').equal;
 var testCase = [
   { q: "1 + 1", a: 2 },
@@ -121,4 +117,4 @@ testCase.forEach(item => {
   console.log(calculate(item.q))
   assert(calculate(item.q), item.a, item.q + " = " + item.a);
 })
-/* test-end */
+/* test */

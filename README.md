@@ -1,84 +1,126 @@
 ## leetcode 题解（JS版）
 
-### 链表
-------
+### Stack and Queue
+-----
 
 <details>
-<summary>206 Reverse Linked List (链表逆序1)</summary>
+<summary>
+224 Basic Calculator
+</summary>
 
-[question](https://leetcode.com/problems/reverse-linked-list/description/)
+[question](https://leetcode.com/problems/basic-calculator/description/)
 
-Reverse a singly linked list.
 
-[answer](./reverse-linked-list.js)
+Implement a basic calculator to evaluate a simple expression string.
+
+The expression string may contain open ( and closing parentheses ), the plus + or minus sign -, non-negative integers and empty spaces .
+
+You may assume that the given expression is always valid.
+
+
+[answer](./answers/basic-calculator.js)
+
 
 ```js
-var reverseList = function (head) {
-  var newHead = null
-  while (head) {
-    var headNext = head.next
-    head.next = newHead
-    newHead = head
-    head = headNext
-  }
-  return newHead
+
+var Stack = function () {
+  this.data = [];
 }
+Stack.prototype.push = function (v) {
+  this.data.push(v);
+}
+Stack.prototype.pop = function () {
+  return this.data.pop();
+}
+Stack.prototype.top = function () {
+  return this.data[this.data.length - 1];
+}
+Stack.prototype.size = function () {
+  return this.data.length;
+}
+Stack.prototype.empty = function () {
+  return !this.data.length;
+}
+
+var compute = function (numberStack, operationStack) {
+  if (numberStack.size() < 2) return;
+  var num2 = numberStack.top();
+  numberStack.pop();
+  var num1 = numberStack.top();
+  numberStack.pop();
+
+  if (operationStack.top() === '+') {
+    numberStack.push(num1 + num2);
+  } else if (operationStack.top() === '-') {
+    numberStack.push(num1 - num2);
+  }
+
+  operationStack.pop();
+}
+
+var isNum = function (s) {
+  return s >= 0 && s <= 9
+}
+
+var calculate = function (str) {
+  var STATE_BEGIN = 0;
+  var NUMBER_STATE = 1;
+  var OPERATION_STATE = 2;
+
+  var numberStack = new Stack();
+  var operationStack = new Stack();
+
+  var state = STATE_BEGIN;
+  var number = 0;
+  var compuateFlag = false;
+
+  for (var i = 0; i < str.length; i++) {
+    var curr = str[i]
+    if (curr === ' ') continue;
+
+    switch (state) {
+      case STATE_BEGIN:
+        state = isNum(curr) ? NUMBER_STATE : OPERATION_STATE;
+        i--;
+        break;
+      case NUMBER_STATE:
+        if (isNum(curr)) {
+          number = number * 10 + (+curr);
+        } else {
+          numberStack.push(number);
+          if (compuateFlag) compute(numberStack, operationStack);
+          number = 0;
+          i--;
+          state = OPERATION_STATE
+        }
+        break;
+      case OPERATION_STATE:
+        if (curr === '+' || curr === '-') {
+          operationStack.push(curr);
+          compuateFlag = true;
+        } else if (curr === '(') {
+          state = NUMBER_STATE;
+          compuateFlag = false;
+        } else if (isNum(curr)) {
+          state = NUMBER_STATE;
+          i--;
+        } else if (curr === ')') {
+          compute(numberStack, operationStack);
+        }
+        break;
+    }
+  }
+
+  if (number !== 0) {
+    numberStack.push(number)
+    compute(numberStack, operationStack)
+  } else if (number === 0 && numberStack.empty()) {
+    return 0
+  }
+
+  return numberStack.top()
+}
+
 ```
 
-</details>
-<br>
-
-**92** Reverse Linked List 2 (链表逆序2)
-[question](https://leetcode.com/problems/reverse-linked-list-ii/description/)
-[answer](./reverse-linked-list2.js)
-
-**160** Intersection of Two Linket List (两链表求交点)
-[question](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
-[answer](./intersection-of-two-linked-list.js)
-
-**141** Linked List Cycle (链表是否有环)
-[question](https://leetcode.com/problems/linked-list-cycle/description/)
-[answer](./linked-list-cycle.js)
-
-**142** Linked List Cycle II (求链表环的起始节点)
-[question](https://leetcode.com/problems/linked-list-cycle-ii/description/)
-[answer](./linked-list-cycle2.js)
-
-**86** Partition List (链表划分)
-[question](https://leetcode.com/problems/partition-list/description/)
-[answer](./partition-list.js)
-
-**138** Copy List with Random Pointer (复杂链表的深拷贝)
-[question](https://leetcode.com/problems/copy-list-with-random-pointer/description/)
-[answer](./copy-width-random-pointer.js)
-
-**21** Merge Two Sorted Lists (合并链表1)
-[question](https://leetcode.com/problems/merge-two-sorted-lists/description/)
-[answer](./merge-two-sorted-list1.js)
-
-**23** Merge k Sorted Lists (合并链表2)
-[question](https://leetcode.com/problems/merge-k-sorted-lists/description/)
-[answer](./merge-two-sorted-list2.js)
-
-**2** Add Two Numbers (链表相加)
-[question](https://leetcode.com/problems/add-two-numbers/description/)
-[answer](./add-two-numbers.js)
-
-### 堆，栈，队列
-------
-
-**225** Implement Stack using Queues (使用队列实现栈)
-[question](https://leetcode.com/problems/implement-stack-using-queues/description/)
-[answer](implement-stack-using-queues.js)
-
-**232** Implement Queue using Stacks (使用栈实现队列)
-[question](https://leetcode.com/problems/implement-queue-using-stacks/description/)
-[answer](implement-queues-using-stack.js)
-
-**155** Min Stack (包含min函数的栈)
-[question](https://leetcode.com/problems/min-stack/description/)
-[answer](min-stack.js)
-
-**224** Basic Calculator (简单计算器)
-[question](https://leetcode.com/problems/basic-calculator/description/)
-[answer](basic-calculator.js)
+<details>
