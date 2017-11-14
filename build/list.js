@@ -13,6 +13,12 @@ module.exports = [
         id: 215,
         question: 'https://leetcode.com/problems/kth-largest-element-in-an-array/description/',
         answer: 'kth-largest-element-in-an-array'
+      },
+      {
+        title: 'Find Median from Data Stream',
+        id: 295,
+        question: 'https://leetcode.com/problems/find-median-from-data-stream/description/',
+        answer: 'find-median-from-data-stream'
       }
     ]
   }

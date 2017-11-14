@@ -6,5 +6,9 @@ module.exports = {
       head = head.next
     }
     process.stdout.write('null \n')
+  },
+
+  isArray (data) {
+    return Object.prototype.toString.call(data) !== '[object Array]'
   }
 }
